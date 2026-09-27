@@ -110,8 +110,8 @@ public class DogManagement {
                 System.out.println("Weight: " + weights[index]);
                 System.out.println("Age: " + ages[index]);
                 System.out.println("Enter new values for the record:");
-                String newName = ValidateStringInput("Enter the dog's new name: ");
                 
+                String newName = ValidateStringInput("Enter the dog's new name: ");
                 if(String.parseInt(newName)==SENTINEL_VALUE){
                     System.out.println("Record update cancelled.");
                     return;
@@ -121,7 +121,7 @@ public class DogManagement {
                     System.out.println("Record update cancelled.");
                     return;
                 }
-                }
+                
                 int newWeight = ValidateIntInput("Enter the dog's new weight: ");
                 if(newWeight==SENTINEL_VALUE){
                     System.out.println("Record update cancelled.");
@@ -141,6 +141,7 @@ public class DogManagement {
             }
         }
     }
+
     public static void CreateRecord() {
        boolean create=true;
        int positionInArray = FindNextAvailableIndex();
