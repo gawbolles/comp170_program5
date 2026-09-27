@@ -342,7 +342,10 @@ public class DogManagement {
     }
     public static void DisplayDogYears(){
         for(int i=0;i<ids.length;i++){
-            System.out.println("Dog: " + ids[i]+" - "+names[i] + ", Age/Age in Dog Years: " + ages[i]+"/"+ages[i]*15);
+            if(names[i].isEmpty()){}
+            else{
+                System.out.println(ids[i]+" - "+names[i] + ", Age/Age in Dog Years: " + ages[i]+"/"+ages[i]*15);
+            }
         }
     }
 }
