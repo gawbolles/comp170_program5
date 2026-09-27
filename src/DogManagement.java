@@ -92,7 +92,54 @@ public class DogManagement {
         }
     }
     public static void UpdateRecord(){
-        
+        int idToUpdate=ValidateAlternateIDInput("Enter the ID of the record to update: ");
+        if(idToUpdate==SENTINEL_VALUE){
+            System.out.println("Update cancelled.");
+            return;
+        }
+        else{
+            int index = FindIndexByID(idToUpdate);
+            if(index == -1){
+                System.out.println("Record not found."); //Shouldn't hit this
+            }
+            else{
+                System.out.println("Current record:");
+                System.out.println("ID: " + ids[index]);
+                System.out.println("Name: " + names[index]);
+                System.out.println("Breed: " + breeds[index]);
+                System.out.println("Weight: " + weights[index]);
+                System.out.println("Age: " + ages[index]);
+                System.out.println("Enter new values for the record:");
+                String newName = ValidateStringInput("Enter the dog's new name: ");
+                
+                if(String.parseInt(newName)==SENTINEL_VALUE){
+                    System.out.println("Record update cancelled.");
+                    return;
+                }
+                String newBreed = ValidateStringInput("Enter the dog's new breed: ");
+                if(String.parseInt(newBreed)==SENTINEL_VALUE){
+                    System.out.println("Record update cancelled.");
+                    return;
+                }
+                }
+                int newWeight = ValidateIntInput("Enter the dog's new weight: ");
+                if(newWeight==SENTINEL_VALUE){
+                    System.out.println("Record update cancelled.");
+                    return;
+                }
+                int newAge = ValidateIntInput("Enter the dog's new age: ");
+                if(newAge==SENTINEL_VALUE){
+                    System.out.println("Record update cancelled.");
+                    return;
+                }
+                
+                names[index] = newName;
+                breeds[index] = newBreed;
+                weights[index] = newWeight;
+                ages[index] = newAge;
+                System.out.println("Record updated successfully.");
+            }
+        }
     }
     public static void CreateRecord() {
        boolean create=true;
